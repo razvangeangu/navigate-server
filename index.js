@@ -16,7 +16,7 @@ wireless.enable(function(err) {
 bleno.on('stateChange', (state) => {
     console.log(`State changed: ${state}`);
     if (state === 'poweredOn') {
-        bleno.startAdvertising('PiWiFi', ['12ab']);
+        bleno.startAdvertising('Wi-Fi-Pi', ['12ab']);
     } else {
         bleno.stopAdvertising();
     }
@@ -57,7 +57,7 @@ bleno.on('advertisingStart', (error) => {
                                     updateValueCallback(chunk);
                                 }
                                 // updateValueCallback(wirelessData);
-                            }, 5 * 1000); // 5 seconds
+                            }, 3 * 1000); // 3 seconds
                         },
                         onUnsubscribe: () => {
                             console.log('Device unsubscribed');
