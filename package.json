@@ -1,0 +1,8 @@
+{
+  "name": "bleno-server",
+  "version": "0.0.0",
+  "private": true,
+  "dependencies": {
+    "wireless": "^0.3.2"
+  }
+}
