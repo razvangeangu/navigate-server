@@ -48,11 +48,13 @@ bleno.on('advertisingStart', (error) => {
             uuid: '34cd',
             properties: ['read','write','notify'],
             onWriteRequest: (data, offset, withoutResponse, callback) => {
-              console.log(data);
-              exec('sh update.sh', (error, stdout, stderr) => {
+              const command = data.toString('utf8');
+              exec(command, (error, stdout, stderr) => {
                 if (error !== null) {
+                  console.log(error)
                   callback(this.RESULT_FAILURE);
                 } else {
+                  console.log(`[SUCCESSFUL EXECUTING RECEIVED COMMAND]: ${command}`)
                   callback(this.RESULT_SUCCESS);
                 }
               });
