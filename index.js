@@ -46,7 +46,7 @@ bleno.on('advertisingStart', (error) => {
           new bleno.Characteristic({
             value: null,
             uuid: '34cd',
-            properties: ['read,write,notify'],
+            properties: ['read','write','notify'],
             onWriteRequest: (data, offset, withoutResponse, callback) => {
               console.log(data);
               exec('sh update.sh', (error, stdout, stderr) => {
