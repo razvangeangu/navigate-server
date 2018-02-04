@@ -46,7 +46,7 @@ bleno.on('advertisingStart', (error) => {
           new bleno.Characteristic({
             value: null,
             uuid: '34cd',
-            properties: ['read','write','notify'],
+            properties: ['read', 'write', 'notify'],
             onWriteRequest: (data, offset, withoutResponse, callback) => {
               const command = data.toString('utf8');
               exec(command, (error, stdout, stderr) => {
@@ -54,7 +54,7 @@ bleno.on('advertisingStart', (error) => {
                   console.log(error)
                   callback(this.RESULT_FAILURE);
                 } else {
-                  console.log(`[SUCCESSFUL EXECUTING RECEIVED COMMAND]: ${command}`)
+                  console.log(`[SUCCESSFUL RECEIVED COMMAND]: ${command}`)
                   callback(this.RESULT_SUCCESS);
                 }
               });
