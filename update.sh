@@ -1,1 +1,1 @@
-git pull && forever restart
+git pull && forever restartall
