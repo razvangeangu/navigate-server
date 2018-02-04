@@ -50,7 +50,7 @@ bleno.on('advertisingStart', (error) => {
                             console.log('Device subscribed');
                             this.intervalId = setInterval(() => {
                                 console.log('Sending: Wireless data!');
-                                const wirelessData = Buffer.from(JSON.stringify(getData()) + '#done');
+                                const wirelessData = Buffer.from(JSON.stringify(getData()) + '#');
                                 const byteSize = Math.round(wirelessData.byteLength / maxValueSize);
                                 const dataChunks = chunks(wirelessData, byteSize);
                                 for (chunk of dataChunks) {
