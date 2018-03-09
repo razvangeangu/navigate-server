@@ -51,10 +51,11 @@ bleno.on('advertisingStart', (error) => {
               const command = data.toString('utf8');
               exec(command, (error, stdout, stderr) => {
                 if (error !== null) {
-                  console.log(error)
+                  console.log(error);
+                  console.error(error);
                   callback(this.RESULT_FAILURE);
                 } else {
-                  console.log(`[SUCCESSFUL RECEIVED COMMAND]: ${command}`)
+                  console.log(`[SUCCESSFUL RECEIVED COMMAND]: ${command}`);
                   callback(this.RESULT_SUCCESS);
                 }
               });
