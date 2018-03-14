@@ -4,9 +4,6 @@ const exec = require('child_process').exec;
 
 const wireless = new Wireless({
   iface: 'wlan0',
-  updateFrequency: 10, // Optional, seconds to scan for networks 
-  connectionSpyFrequency: 2, // Optional, seconds to scan if connected 
-  vanishThreshold: 2 // Optional, how many scans before network considered gone 
 });
 
 wireless.enable(function (err) {
@@ -70,7 +67,7 @@ bleno.on('advertisingStart', (error) => {
                 for (chunk of dataChunks) {
                   updateValueCallback(chunk);
                 }
-              }, 3 * 1000); // 3 seconds
+              }, 2.5 * 1000); // 2.5 seconds
             },
             onUnsubscribe: () => {
               console.log('Device unsubscribed');
