@@ -67,7 +67,7 @@ bleno.on('advertisingStart', (error) => {
                 for (chunk of dataChunks) {
                   updateValueCallback(chunk);
                 }
-              }, 1 * 1000); // 2.5 seconds
+              }, 2 * 1000);
             },
             onUnsubscribe: () => {
               console.log('Device unsubscribed');
